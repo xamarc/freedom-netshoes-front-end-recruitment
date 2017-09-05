@@ -1,0 +1,19 @@
+//misc settings
+@import 'config/_mixins-fonts';
+
+//vendor
+@import 'vendor/_bootstrap';
+@import 'vendor/_font-awesome';
+
+//animate
+@import 'vendor/animate/_animate';
+
+//layout
+@import 'layout/_global';
+
+//global things
+@import 'layout/_header';
+@import 'layout/_sidebar';
+@import 'layout/_theme';
+@import 'layout/_cart';
+@import 'layout/_main';

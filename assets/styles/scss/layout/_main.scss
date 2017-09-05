@@ -1,0 +1,155 @@
+@include font-face(ralewayregular, "../../fonts/raleway/raleway-regular-webfont");
+
+/* ==========================================================================
+   Mixin Custom Scrollbar
+   ========================================================================== */
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }  
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@include scrollbars(.5em, slategray);
+
+@mixin scrollbarsTab($size, $foreground-color, $background-color: mix($foreground-color, transparent,  50%)) {
+  // For Google Chrome
+  #scroll-tabs-container::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  #scroll-tabs-container::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  #scroll-tabs-container::-webkit-scrollbar-track {
+      background: $background-color;
+  }    
+
+  #scroll-tabs-container {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@include scrollbarsTab(0, transparent);
+
+/* ==========================================================================
+   Global layout
+   ========================================================================== */
+.page-header {
+    border-bottom: 1px solid #eee;
+    margin: -20px 0 20px;
+    padding: 20px;       
+    & h1{
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 30px;
+        & .text-muted{
+            color: #818a91!important;
+            font-weight: normal;
+        }
+        & .page-header-icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 22px;
+            line-height: 1;
+        }
+    }
+}
+
+/* ==========================================================================
+   Product list
+   ========================================================================== */
+.cart{
+    list-style: none outside;
+    margin:0;
+    padding: 0;
+    & li{
+        cursor: pointer;
+        & a {
+            background: white;
+            box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px;            
+        }
+        text-align: center;
+        & img {
+            border-radius: 8px;
+        }
+        & .hover-container{
+            position: relative;
+            & .button-container {
+                color: #fff;
+                font-size: 2em;
+                display: none;
+                position: absolute;
+                opacity:0;
+                width: 50px;
+                height: 50px;
+                top: 50%;
+                left: 50%;
+                margin: -25px 0 0 -25px;
+                text-align: center;
+                line-height: 50px;
+                z-index: 1;
+            }       
+            & .price-container{
+                position: absolute;            
+                right: 3px;
+                top: -6px;
+                & .currency, .price{
+                    color: #662985;
+                }
+                & .price{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                }
+            }
+            & .free-shipping{
+                position: absolute;
+                height: 26px;
+                background-color: #662985;
+                border-radius: 0 8px 0 8px;
+                text-align: center;
+                line-height: 26px;
+                bottom: 0;
+                padding: 0 5px;
+                left: 0;
+                color: #fff;
+            }
+        }        
+        &:hover{
+            & img{
+                filter: brightness(85%);
+            }
+            & .button-container {
+                display: block;
+                opacity: 1;
+            }
+        }
+        & h5{
+            color: #662985;
+            text-transform: inherit;
+        }
+    }
+}
+   

@@ -1,0 +1,61 @@
+<template>
+    <require from="../valueConverters/integer-value-converter"></require>
+
+    <div class="cd-cart-container empty">
+        <a href="#0" class="cd-cart-trigger">
+            Cart
+            <ul class="count"> <!-- cart items count -->
+                <li>0</li>
+                <li>0</li>
+            </ul> <!-- .count -->
+        </a>
+    
+        <div class="cd-cart">
+            <div class="wrapper">
+                <header>
+                    <h2>Carrinho de compras</h2>
+                    <span class="undo">Item removed. <a href="#0">Undo</a></span>
+                </header>
+                
+                <div class="body">
+                    <ul>
+                        <li class="product" repeat.for="cartItem of cart.itens">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                                    <div class="product-image">
+                                        <img src="assets/images/products/${cartItem.product.id}.jpg" alt="${cartItem.product.title}">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
+                                    <div class="product-details">
+                                        <h3>${cartItem.product.title}</h3>
+                                        <div class="price-container">
+                                            <span class="currency">${cartItem.product.currencyFormat}</span>
+                                            <span class="price">${cartItem.product.price}</span>
+                                        </div>
+                                        <div class="actions">
+                                            <a href="#" class="delete-item" click.delegate="onRemoveProducts(cartItem.product)">
+                                                <i class="fa fa-trash">
+                                            </a>
+                                            <div class="quantity">
+                                                <label>Qtd</label>
+                                                <span class="select">
+                                                    <input type="number" value.bind="cartItem.qtd | integer" style="width:50px">                                            
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>    
+                <footer>
+                    <a href="#0" class="checkout">
+                        <em>Finalizar - $<span>${cart.totalCart}</span></em>
+                    </a>
+                </footer>
+            </div>
+        </div> <!-- .cd-cart -->
+    </div>
+</template>

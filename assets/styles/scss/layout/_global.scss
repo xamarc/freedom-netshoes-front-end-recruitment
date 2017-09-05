@@ -1,0 +1,11 @@
+body, html {
+    height: 100%;        
+    overflow: hidden;
+    width: 100%;
+}
+body {
+    font-family: "ralewayregular", monospace !important;
+    font-size: 13px !important;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}

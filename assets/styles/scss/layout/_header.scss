@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Desktop
+   ========================================================================== */
+.middle-bar {
+    padding: 20px 0;
+    & .logo {
+        display: inline-block;
+        & img{
+            height: 46px;
+            width: 133px;
+        }
+    }
+    & .search {
+        & .form-group{
+            margin: 0;
+            & .input-group-addon{
+                background-color: #fff;
+                border-color: #662985;
+                border-radius: 25px 0 0px 25px;            
+                border-right: none;
+            }
+            & input {
+                border-color: #662985;
+                border-radius: 0 25px 25px 0;
+                border-left: none;
+                font-size: 1em;
+                padding-left: 0 !important;
+            }
+        } 
+    } 
+    & .header-tools{
+        & a{            
+            border: 1px solid #662985;
+            border-radius: 50%;
+            color: #662985;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            width: 45px;
+            &:hover{
+                background-color: #662985;
+            }            
+        }
+    } 
+}
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+.mobile-view{
+    & .logo{
+        & img{
+            height: 46px;
+            width: 130px;
+        }
+    }
+}

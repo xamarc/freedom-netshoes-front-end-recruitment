@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "aurelia-api": "github:spoonx/aurelia-api"
+  }
+}

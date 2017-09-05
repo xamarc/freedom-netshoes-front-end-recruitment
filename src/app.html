@@ -1,0 +1,68 @@
+<template>
+    <require from="views/cart-view"></require>
+    <cart-view containerless></cart-view>
+    <div class="page-wrapper">
+      <!-- offcanvas sidebar menu -->
+      <require from="partials/offcanvas"></require>
+      <offcanvas containerless></offcanvas>
+      <!-- // -->
+      <div canvas="container">
+          <div class="backdrop offcanvas-toggle"></div>
+          <!-- header -->
+          <header class="header bg-white">
+              <div class="top-bar">
+                  <div class="container">
+                      <div class="row">
+
+                      </div>
+                  </div>            
+              </div>
+              <div class="container">
+                    <div class="middle-bar">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <!-- logo -->
+                            <a href="index.html" class="logo">
+                                <img src="assets/images/netshoes-logo.svg" alt="Logotipo Netshoes">
+                            </a>
+                            <!-- // -->
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <!-- search field -->
+                                <require from="partials/search"></require>
+                                <search containerless></search>
+                                <!-- // -->
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <!-- tools -->
+                                <require from="partials/tools"></require>
+                                <tools containerless></tools>
+                                <!-- // -->
+                            </div>
+                        </div>                          
+                    </div>
+                </div>
+                <!-- top navigation -->
+                <require from="partials/topnav.html"></require>
+                <topnav containerless></topnav>
+                <!-- // -->
+          </header>
+          <!-- // -->
+          <main>
+                <div class="page-header">
+                    <div class="container">
+                        <h1><span class="text-muted font-weight-light"><i class="page-header-icon fa fa-search"></i>${heading}</span></h1>
+                    </div>
+                </div>
+              <div class="container">
+                  <div class="row">
+                      <require from="views/product-listview"></require>
+                      <product-listview containerless></product-listview>
+                  </div>
+              </div>            
+          </main>
+          
+      </div>
+    </div>   
+     
+</template>
