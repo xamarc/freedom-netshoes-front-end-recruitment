@@ -15,4 +15,12 @@ export class CartView{
     onRemoveProducts(product:Product){
         this.cart.removeItem(product)
     }
+
+    addItemCart(cartItem){
+        this.cart.addItem(cartItem.product);
+    }
+
+    removeItemCart(cartItem){
+        this.cart.decrementItem(cartItem.product);
+    }
 }

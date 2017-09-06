@@ -13,6 +13,9 @@ export class App {
   } 
 
   attached() {
+      $(".shadow-bkg").on("click", function(){
+        $(".cd-cart-container").removeClass("cart-open");
+      });
     var slidebars = function() {
         var t = $("[canvas]"),
             e = {},

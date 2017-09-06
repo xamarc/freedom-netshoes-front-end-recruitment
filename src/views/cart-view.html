@@ -1,13 +1,16 @@
 <template>
     <require from="../valueConverters/integer-value-converter"></require>
+    
 
-    <div class="cd-cart-container empty">
-        <a href="#0" class="cd-cart-trigger">
+    <div class="cd-cart-container ${cart.totalCartItens > 0 ? 'cart-open' : 'empty' }">
+        <div class="shadow-bkg"></div>
+        <a href="#" class="cd-cart-trigger">
             Cart
             <ul class="count"> <!-- cart items count -->
-                <li>0</li>
-                <li>0</li>
-            </ul> <!-- .count -->
+                <li>${cart.totalCartItens}</li>
+                <li>${cart.totalCartItens}</li>
+            </ul>
+            <!-- .count -->
         </a>
     
         <div class="cd-cart">
@@ -31,7 +34,7 @@
                                         <h3>${cartItem.product.title}</h3>
                                         <div class="price-container">
                                             <span class="currency">${cartItem.product.currencyFormat}</span>
-                                            <span class="price">${cartItem.product.price}</span>
+                                            <span class="price">${cartItem.totalValue}</span>
                                         </div>
                                         <div class="actions">
                                             <a href="#" class="delete-item" click.delegate="onRemoveProducts(cartItem.product)">
@@ -40,7 +43,9 @@
                                             <div class="quantity">
                                                 <label>Qtd</label>
                                                 <span class="select">
-                                                    <input type="number" value.bind="cartItem.qtd | integer" style="width:50px">                                            
+                                                    <input type="number" value.bind="cartItem.qtd | integer" style="width:50px" disabled>
+                                                    <button class="btn btn-xs" click.delegate="addItemCart(cartItem)" style="margin: 0 0 8px 0; padding: 0px 8px; font-size: 1.3em; background-color: #2c97de;">+</button>
+                                                    <button class="btn btn-xs" click.delegate="removeItemCart(cartItem)" style="margin: 0 0 8px 0; padding: 0px 8px; font-size: 1.3em; background-color: #2c97de;">-</button>                                            
                                                 </span>
                                             </div>
                                         </div>
@@ -51,8 +56,8 @@
                     </ul>
                 </div>    
                 <footer>
-                    <a href="#0" class="checkout">
-                        <em>Finalizar - $<span>${cart.totalCart}</span></em>
+                    <a href="#" class="checkout">
+                        <em>Finalizar compra - R$<span>${cart.totalCart}</span></em>
                     </a>
                 </footer>
             </div>
