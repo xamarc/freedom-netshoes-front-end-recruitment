@@ -67,7 +67,7 @@ export class Cart {
         for(let item of this.itens){            
             total += item.qtd * item.product.price;
             totalItens += item.qtd;
-            item.totalValue = item.qtd * item.product.price;
+            item.totalValue = parseFloat((item.qtd * item.product.price).toFixed(2));
         }
         this.totalCart = parseFloat(total.toFixed(2));
         this.totalCartItens = totalItens;
