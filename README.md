@@ -15,10 +15,15 @@ Para que seja gerada uma versão de produção, é necessário inserir no prompt
 Basta copiar para o servidor os seguintes arquivos e pastas:
 
 index.html
+
 favicon.ico
+
 assets/
+
 scripts/
+
 public/data/products.json
+
 
 
  
